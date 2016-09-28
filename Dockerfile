@@ -1,8 +1,11 @@
 FROM ubuntu:16.04
 
 RUN export LC_ALL=C.UTF-8
+RUN DEBIAN_FRONTEND=noninteractive
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+
 RUN apt-get update
-RUN apt-get install build-essential apt-utils -y
+RUN apt-get install wget curl ssh rsync ssh openssh-client git build-essential apt-utils -y
 
 # PHP
 RUN apt-get install -y \
@@ -11,9 +14,13 @@ RUN apt-get install -y \
     php7.0-gd \
     php7.0-dev \
     php7.0-xml \
-    php7.0-bcmath
-
-RUN php -v
+    php7.0-bcmath \
+    php7.0-mysql \
+    php7.0-mbstring \
+    php7.0-zip \
+    php7.0-sqlite \
+    php-xdebug
+RUN command -v php
 
 # Composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
@@ -22,13 +29,28 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
     php -r "unlink('composer-setup.php');" && \
     mv composer.phar /usr/local/bin/composer && \
     chmod +x /usr/local/bin/composer
+RUN command -v composer
 
-RUN composer --version
+# PHPUnit
+RUN wget https://phar.phpunit.de/phpunit.phar
+RUN chmod +x phpunit.phar
+RUN mv phpunit.phar /usr/local/bin/phpunit
+RUN command -v phpunit
 
 # Node.js
-RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh && \
-    bash nodesource_setup.sh && \
-    apt-get install nodejs -y
+RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
+RUN bash nodesource_setup.sh
+RUN apt-get install nodejs -y
+RUN command -v node
+RUN command -v npm
 
+# Other
+RUN mkdir ~/.ssh
+RUN touch ~/.ssh_config
+
+# Display versions installed
+RUN php -v
+RUN composer --version
+RUN phpunit --version
 RUN node -v
 RUN npm -v
