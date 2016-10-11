@@ -22,3 +22,4 @@
   * Composer
   * PHPUnit
   * Node.js 6.x
+  * Yarn
