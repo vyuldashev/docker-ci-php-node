@@ -19,6 +19,6 @@
     * gd
     * xml
     * bcmath
-  * composer
-  * phpunit
+  * Composer
+  * PHPUnit
   * Node.js 6.x
