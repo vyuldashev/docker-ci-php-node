@@ -44,6 +44,13 @@ RUN apt-get install nodejs -y
 RUN command -v node
 RUN command -v npm
 
+# Yarn
+RUN apt-key adv --keyserver pgp.mit.edu --recv 9D41F3C3 && \
+    echo "deb http://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt-get update && apt-get install yarn
+
+RUN command -v yarn
+
 # Other
 RUN mkdir ~/.ssh
 RUN touch ~/.ssh_config
@@ -54,3 +61,4 @@ RUN composer --version
 RUN phpunit --version
 RUN node -v
 RUN npm -v
+RUN yarn --version
