@@ -1,7 +1,7 @@
 # Docker image for CI
 
 ## System information
-  * Ubuntu 16.04
+  * Ubuntu 16.10
 
 ## Installed packages
   * ssh
