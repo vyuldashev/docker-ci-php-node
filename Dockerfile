@@ -5,10 +5,10 @@ RUN DEBIAN_FRONTEND=noninteractive
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 RUN apt-get update
-RUN apt-get install wget curl ssh rsync ssh openssh-client git build-essential apt-utils software-properties-common python-software-properties -y
+RUN apt-get install language-pack-en-base wget curl ssh rsync ssh openssh-client git build-essential apt-utils software-properties-common python-software-properties -y
 
 # PHP
-RUN add-apt-repository ppa:ondrej/php
+RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
 RUN apt-get update ; apt-get install -y --allow-unauthenticated \
     php7.1 \
     php7.1-curl \
