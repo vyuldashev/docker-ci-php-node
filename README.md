@@ -19,6 +19,7 @@
     * gd
     * xml
     * bcmath
+    * intl
   * Composer
   * PHPUnit
   * Node.js 7.x
