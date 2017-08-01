@@ -1,7 +1,7 @@
-# Docker image for CI
+# Docker image for Continuous Integration
 
 ## System information
-  * Ubuntu 16.10
+  * Ubuntu 16.04
 
 ## Installed packages
   * ssh
@@ -22,5 +22,5 @@
     * intl
   * Composer
   * PHPUnit
-  * Node.js 7.x
+  * Node.js 8.x
   * Yarn

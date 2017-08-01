@@ -1,11 +1,32 @@
-FROM ubuntu:16.10
+FROM ubuntu:16.04
 
 RUN export LC_ALL=C.UTF-8
 RUN DEBIAN_FRONTEND=noninteractive
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 RUN apt-get update
-RUN apt-get install language-pack-en-base wget curl ssh rsync ssh openssh-client git build-essential apt-utils software-properties-common python-software-properties -y
+RUN apt-get install -y \
+    autoconf \
+    autogen \
+    language-pack-en-base \
+    wget \
+    curl \
+    ssh \
+    rsync \
+    ssh \
+    openssh-client \
+    git \
+    build-essential \
+    apt-utils \
+    software-properties-common \
+    python-software-properties \
+    nasm \
+    libjpeg-dev \
+    libpng-dev
+
+RUN wget -q -O /tmp/libpng12.deb http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb \
+  && dpkg -i /tmp/libpng12.deb \
+  && rm /tmp/libpng12.deb    
 
 # PHP
 RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
@@ -21,6 +42,7 @@ RUN apt-get update ; apt-get install -y --allow-unauthenticated \
     php7.1-zip \
     php7.1-sqlite \
     php7.1-soap \
+    php7.1-json \
     php7.1-intl \
     php-xdebug
 RUN command -v php
@@ -41,7 +63,7 @@ RUN mv phpunit.phar /usr/local/bin/phpunit
 RUN command -v phpunit
 
 # Node.js
-RUN curl -sL https://deb.nodesource.com/setup_7.x -o nodesource_setup.sh
+RUN curl -sL https://deb.nodesource.com/setup_8.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh
 RUN apt-get install nodejs -y
 RUN command -v node
