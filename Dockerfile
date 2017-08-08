@@ -53,7 +53,8 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
     php composer-setup.php && \
     php -r "unlink('composer-setup.php');" && \
     mv composer.phar /usr/local/bin/composer && \
-    chmod +x /usr/local/bin/composer
+    chmod +x /usr/local/bin/composer && \
+    composer self-update --preview
 RUN command -v composer
 
 # PHPUnit
@@ -69,13 +70,6 @@ RUN apt-get install nodejs -y
 RUN command -v node
 RUN command -v npm
 
-# Yarn
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
-    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-RUN apt-get update && apt-get install yarn
-
-RUN command -v yarn
-
 # Other
 RUN mkdir ~/.ssh
 RUN touch ~/.ssh_config
@@ -86,4 +80,3 @@ RUN composer --version
 RUN phpunit --version
 RUN node -v
 RUN npm -v
-RUN yarn --version
