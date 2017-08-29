@@ -11,7 +11,6 @@ RUN apt-get install -y \
     language-pack-en-base \
     wget \
     curl \
-    ssh \
     rsync \
     ssh \
     openssh-client \
