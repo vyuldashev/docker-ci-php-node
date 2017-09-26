@@ -28,9 +28,8 @@ RUN wget -q -O /tmp/libpng12.deb http://mirrors.kernel.org/ubuntu/pool/main/libp
   && rm /tmp/libpng12.deb    
 
 # PHP
-RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
-RUN apt-get update ; apt-get install -y --allow-unauthenticated \
-    php7.1 \
+RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php && apt-get update && apt-get install -y php7.1
+RUN apt-get install -y \
     php7.1-curl \
     php7.1-gd \
     php7.1-dev \
@@ -43,7 +42,9 @@ RUN apt-get update ; apt-get install -y --allow-unauthenticated \
     php7.1-soap \
     php7.1-json \
     php7.1-intl \
-    php-xdebug
+    php7.1-imap \    
+    php-xdebug \
+    php-memcached
 RUN command -v php
 
 # Composer

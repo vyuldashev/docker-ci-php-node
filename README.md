@@ -11,6 +11,7 @@
   * wget
   * PHP 7.1
     * MySQL
+    * memcached
     * sqlite
     * Xdebug
     * zip
@@ -20,6 +21,7 @@
     * xml
     * bcmath
     * intl
+    * imap
   * Composer
   * PHPUnit
   * Node.js 8.x
