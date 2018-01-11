@@ -24,4 +24,4 @@
     * imap
   * Composer
   * PHPUnit
-  * Node.js 8.x
+  * Node.js 9.x
