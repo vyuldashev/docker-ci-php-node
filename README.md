@@ -2,7 +2,7 @@
 
 ## Available tags
 - [`2.0` (_Dockerfile_)](https://github.com/vyuldashev/docker-ci-php-node/blob/master/Dockerfile)
-- [`1.0` (_1.0/Dockerfile_)](https://github.com/vyuldashev/docker-ci-php-node/blob/1.0/Dockerfile)
+- [`1.0` (_1.0/Dockerfile_)](https://github.com/vyuldashev/docker-ci-php-node/blob/master/1.0/Dockerfile)
 
 ## System information
   * Ubuntu 16.04
