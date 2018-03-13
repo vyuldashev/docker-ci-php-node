@@ -67,6 +67,7 @@ RUN command -v phpunit
 RUN curl -sL https://deb.nodesource.com/setup_9.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh
 RUN apt-get install nodejs -y
+RUN npm -g update
 RUN command -v node
 RUN command -v npm
 
