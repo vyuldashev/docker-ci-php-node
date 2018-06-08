@@ -22,7 +22,8 @@ RUN apt-get install -y \
     python-software-properties \
     nasm \
     libjpeg-dev \
-    libpng-dev
+    libpng-dev \
+    libpng16-16
 
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo    
 
@@ -41,6 +42,7 @@ RUN apt-get install -y \
     php7.1-mysql \
     php7.1-mbstring \
     php7.1-zip \
+    php7.1-bz2 \
     php7.1-sqlite \
     php7.1-soap \
     php7.1-json \
@@ -63,11 +65,17 @@ RUN chmod +x phpunit.phar
 RUN mv phpunit.phar /usr/local/bin/phpunit
 RUN command -v phpunit
 
+# Security Checker
+RUN wget http://get.sensiolabs.org/security-checker.phar
+RUN chmod +x security-checker.phar
+RUN mv security-checker.phar /usr/local/bin/security-checker
+RUN command -v security-checker
+
 # Node.js
-RUN curl -sL https://deb.nodesource.com/setup_9.x -o nodesource_setup.sh
+RUN curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh
 RUN apt-get install nodejs -y
-RUN npm install npm@5.6.0 -g
+RUN npm install npm@6.1.0 -g
 RUN command -v node
 RUN command -v npm
 
@@ -79,5 +87,6 @@ RUN touch ~/.ssh_config
 RUN php -v
 RUN composer --version
 RUN phpunit --version
+RUN security-checker --version
 RUN node -v
 RUN npm -v

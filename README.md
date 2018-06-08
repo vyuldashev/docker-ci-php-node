@@ -18,6 +18,7 @@
     * memcached
     * sqlite
     * Xdebug
+    * bz2
     * zip
     * mbstring
     * curl
@@ -28,4 +29,5 @@
     * imap
   * Composer
   * PHPUnit
-  * Node.js 9.x
+  * Node.js 10.x
+  * npm 6
