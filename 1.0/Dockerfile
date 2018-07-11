@@ -27,9 +27,9 @@ RUN apt-get install -y \
 
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo    
 
-RUN wget -q -O /tmp/libpng12.deb http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb \
-  && dpkg -i /tmp/libpng12.deb \
-  && rm /tmp/libpng12.deb    
+#RUN wget -q -O /tmp/libpng12.deb http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb \
+#  && dpkg -i /tmp/libpng12.deb \
+#  && rm /tmp/libpng12.deb    
 
 # PHP
 RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php && apt-get update && apt-get install -y php7.1
