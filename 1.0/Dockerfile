@@ -81,6 +81,8 @@ RUN command -v node
 RUN command -v npm
 
 # Ansible
+RUN apt-add-repository ppa:ansible/ansible
+RUN apt-get update
 RUN apt-get install ansible -y
 RUN command -v ansible
 
