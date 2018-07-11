@@ -78,6 +78,10 @@ RUN npm install npm@6.1.0 -g
 RUN command -v node
 RUN command -v npm
 
+# Ansible
+RUN apt-get install ansible
+RUN command -v ansible
+
 # Other
 RUN mkdir ~/.ssh
 RUN touch ~/.ssh_config
@@ -89,3 +93,4 @@ RUN phpunit --version
 RUN security-checker --version
 RUN node -v
 RUN npm -v
+RUN ansible --version
