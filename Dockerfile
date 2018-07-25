@@ -22,7 +22,8 @@ RUN apt-get install -y \
     python-software-properties \
     nasm \
     libjpeg-dev \
-    libpng-dev
+    libpng-dev \
+    libpng16-16
 
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo    
 
