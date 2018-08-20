@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 RUN export LC_ALL=C.UTF-8
 RUN DEBIAN_FRONTEND=noninteractive
@@ -19,7 +19,6 @@ RUN apt-get install -y \
     build-essential \
     apt-utils \
     software-properties-common \
-    python-software-properties \
     nasm \
     libjpeg-dev \
     libpng-dev \
@@ -72,7 +71,7 @@ RUN command -v security-checker
 RUN curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh
 RUN apt-get install nodejs -y
-RUN npm install npm@6.3.0 -g
+RUN npm install npm@6.4.0 -g
 RUN command -v node
 RUN command -v npm
 
