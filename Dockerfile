@@ -11,6 +11,8 @@ RUN apt-get install -y \
     autogen \
     language-pack-en-base \
     wget \
+    zip \
+    unzip \
     curl \
     rsync \
     ssh \
@@ -68,10 +70,10 @@ RUN mv security-checker.phar /usr/local/bin/security-checker
 RUN command -v security-checker
 
 # Node.js
-RUN curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
+RUN curl -sL https://deb.nodesource.com/setup_11.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh
 RUN apt-get install nodejs -y
-RUN npm install npm@6.4.0 -g
+RUN npm install npm@6.4.1 -g
 RUN command -v node
 RUN command -v npm
 
