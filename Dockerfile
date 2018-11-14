@@ -1,8 +1,11 @@
 FROM ubuntu:18.04
 
+ENV TZ=UTC
+
 RUN export LC_ALL=C.UTF-8
 RUN DEBIAN_FRONTEND=noninteractive
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt-get update
 RUN apt-get install -y \
@@ -26,7 +29,7 @@ RUN apt-get install -y \
     libpng-dev \
     libpng16-16
 
-RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo    
+RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 
 # PHP
 RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php && apt-get update && apt-get install -y php7.2
