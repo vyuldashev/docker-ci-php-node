@@ -77,7 +77,7 @@ RUN command -v security-checker
 RUN curl -sL https://deb.nodesource.com/setup_11.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh
 RUN apt-get install nodejs -y
-RUN npm install npm@6.5.0 -g
+RUN npm install npm@6.8.0 -g
 RUN command -v node
 RUN command -v npm
 
