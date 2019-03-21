@@ -50,7 +50,6 @@ RUN apt-get install -y \
     php7.1-intl \
     php7.1-imap \
     php7.1-imagick \
-    php-xdebug \
     php-memcached
 RUN command -v php
 

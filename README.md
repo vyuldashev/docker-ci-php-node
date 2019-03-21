@@ -18,7 +18,6 @@
     * MySQL
     * memcached
     * sqlite
-    * Xdebug
     * bz2
     * zip
     * mbstring
