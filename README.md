@@ -15,7 +15,8 @@
   * curl
   * wget
   * PHP 7.3
-    * MySQL
+    * mysql
+    * pgsql
     * memcached
     * sqlite
     * bz2
