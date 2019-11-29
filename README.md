@@ -1,7 +1,8 @@
 # Docker image for Continuous Integration
 
 ## Available tags
-- [`3.0` (_Dockerfile_)](https://github.com/vyuldashev/docker-ci-php-node/blob/master/Dockerfile)
+- [`4.0` (_Dockerfile_)](https://github.com/vyuldashev/docker-ci-php-node/blob/master/Dockerfile)
+- [`3.0` (_Dockerfile_)](https://github.com/vyuldashev/docker-ci-php-node/blob/master/3.0/Dockerfile)
 - [`2.0` (_Dockerfile_)](https://github.com/vyuldashev/docker-ci-php-node/blob/master/2.0/Dockerfile)
 - [`1.0` (_1.0/Dockerfile_)](https://github.com/vyuldashev/docker-ci-php-node/blob/master/1.0/Dockerfile)
 
@@ -14,7 +15,7 @@
   * rsync
   * curl
   * wget
-  * PHP 7.3
+  * PHP 7.4
     * mysql
     * pgsql
     * memcached
