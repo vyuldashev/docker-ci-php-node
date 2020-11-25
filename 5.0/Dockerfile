@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 
 ENV TZ=UTC
 
@@ -24,7 +24,6 @@ RUN apt-get install -y \
     build-essential \
     apt-utils \
     software-properties-common \
-    python-software-properties \
     nasm \
     libjpeg-dev \
     libpng-dev \
@@ -33,24 +32,23 @@ RUN apt-get install -y \
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 
 # PHP
-RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php && apt-get update && apt-get install -y php7.1
+RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php && apt-get update && apt-get install -y php8.0
 RUN apt-get install -y \
-    php7.1-curl \
-    php7.1-gd \
-    php7.1-dev \
-    php7.1-xml \
-    php7.1-bcmath \
-    php7.1-mysql \
-    php7.1-pgsql \
-    php7.1-mbstring \
-    php7.1-zip \
-    php7.1-bz2 \
-    php7.1-sqlite \
-    php7.1-soap \
-    php7.1-json \
-    php7.1-intl \
-    php7.1-imap \
-    php7.1-imagick \
+    php8.0-curl \
+    php8.0-gd \
+    php8.0-dev \
+    php8.0-xml \
+    php8.0-bcmath \
+    php8.0-mysql \
+    php8.0-pgsql \
+    php8.0-mbstring \
+    php8.0-zip \
+    php8.0-bz2 \
+    php8.0-sqlite \
+    php8.0-soap \
+    php8.0-intl \
+    php8.0-imap \
+    php8.0-imagick \
     php-memcached
 RUN command -v php
 

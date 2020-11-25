@@ -1,13 +1,14 @@
 # Docker image for Continuous Integration
 
 ## Available tags
-- [`4.0` (_Dockerfile_)](https://github.com/vyuldashev/docker-ci-php-node/blob/master/Dockerfile)
+- [`5.0` (_Dockerfile_)](https://github.com/vyuldashev/docker-ci-php-node/blob/master/5.0/Dockerfile)
+- [`4.0` (_Dockerfile_)](https://github.com/vyuldashev/docker-ci-php-node/blob/master/4.0/Dockerfile)
 - [`3.0` (_Dockerfile_)](https://github.com/vyuldashev/docker-ci-php-node/blob/master/3.0/Dockerfile)
 - [`2.0` (_Dockerfile_)](https://github.com/vyuldashev/docker-ci-php-node/blob/master/2.0/Dockerfile)
 - [`1.0` (_1.0/Dockerfile_)](https://github.com/vyuldashev/docker-ci-php-node/blob/master/1.0/Dockerfile)
 
 ## System information
-  * Ubuntu 18.04
+  * Ubuntu
 
 ## Installed packages
   * ssh
@@ -15,7 +16,7 @@
   * rsync
   * curl
   * wget
-  * PHP 7.4
+  * PHP
     * mysql
     * pgsql
     * memcached
@@ -31,5 +32,5 @@
     * imap
   * Composer
   * PHPUnit
-  * Node.js 13
+  * Node.js 12
   * npm 6
