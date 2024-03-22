@@ -1,6 +1,8 @@
 # Docker image for Continuous Integration
 
 ## Available tags
+- [`8.0` (_Dockerfile_)](https://github.com/vyuldashev/docker-ci-php-node/blob/master/8.0/Dockerfile)
+- [`7.0` (_Dockerfile_)](https://github.com/vyuldashev/docker-ci-php-node/blob/master/7.0/Dockerfile)
 - [`6.0` (_Dockerfile_)](https://github.com/vyuldashev/docker-ci-php-node/blob/master/6.0/Dockerfile)
 - [`5.0` (_Dockerfile_)](https://github.com/vyuldashev/docker-ci-php-node/blob/master/5.0/Dockerfile)
 - [`4.0` (_Dockerfile_)](https://github.com/vyuldashev/docker-ci-php-node/blob/master/4.0/Dockerfile)
